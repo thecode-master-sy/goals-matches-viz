@@ -4,6 +4,7 @@ import { viz } from "./viz";
 export const render = (container, { state, setState }) => {
 	const { width, height } = state;
 
+	//render the svg to the screen
 	const svg = select(container)
 		.selectAll("svg")
 		.data([null])

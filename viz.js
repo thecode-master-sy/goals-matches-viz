@@ -13,11 +13,14 @@ export const viz = (
 		setState,
 	}
 ) => {
+	//extract the data, width and height from the state object
 	const { data, width, height } = state;
 
+	//add margins to the visualization. you can tweak the margins from render.js
 	const vizInnerWidth = width - marginLeft - marginRight;
 	const vizInnerHeight = height - marginTop - marginBottom;
 
+	//creating the gray rectangle, this is only for visual purposes you do not need to do this
 	svg
 		.selectAll("rect")
 		.data([null])
@@ -28,6 +31,7 @@ export const viz = (
 		.attr("height", vizInnerHeight)
 		.attr("fill", innerRectFill);
 
+	//only display scatter plot when the data has been fully loaded
 	if (data && data !== "LOADING") {
 		svg.call(scatterPlot, {
 			data,
