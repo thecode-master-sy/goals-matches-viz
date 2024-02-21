@@ -41,9 +41,9 @@ export const viz = (
 			xValue: (d) => d.matches_played,
 			yValue: (d) => d.goals,
 			sizeValue: (d) => d["shots per avg match"],
-			sizeLegendLabel: "shots per avg match",
-			sizeLegendX: 300,
-			sizeLegendY: 50,
+			// sizeLegendLabel: "shots per avg match",
+			// sizeLegendX: 300,
+			// sizeLegendY: 50,
 			circleLabel: (d) => d["player names"],
 			colorValue: (d) => d.league,
 			xAxisLabel: "matches played",
@@ -90,7 +90,13 @@ export const viz = (
 					obj.year = Number(obj.year);
 				});
 
-				const yearData = transformedData.filter((d) => d.year === 2017);
+				const yearData = transformedData.filter(
+					(d) =>
+						d.year === 2018 &&
+						(d.league === "La Liga" ||
+							d.league === "Serie A" ||
+							d.league === "Bundesliga")
+				);
 
 				console.log(yearData);
 

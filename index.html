@@ -1,13 +1,38 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/main.js"></script>
-  </body>
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Vite App</title>
+	</head>
+	<body>
+		<h3 class="header spacer">
+			A scatter plot showing the number of goals after a certain number of
+			matches played in the year 2018
+		</h3>
+		<div class="spacer">
+			<p>
+				<span class="underline">description</span>: The scatter plot below
+				displays three quantitative attributes:
+			</p>
+
+			<ul>
+				<li>Goals: encoded by vertical spatial position</li>
+				<li>Matches Played: encoded by horizontal spatial position</li>
+				<li>Shots per avg match: encoded by the size of the point mark</li>
+			</ul>
+
+			<p>Then one categorical attribute:</p>
+
+			<ul>
+				<li>League: encoded by the color hue of the point marks</li>
+			</ul>
+
+			<p>hover on the point marks to see the names of the players</p>
+		</div>
+
+		<div id="app"></div>
+		<script type="module" src="/main.js"></script>
+	</body>
 </html>

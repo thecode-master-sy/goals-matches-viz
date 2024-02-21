@@ -29,13 +29,12 @@ export function scatterPlot(
 		colorLegendX,
 		colorLegendY,
 		circleLabel,
-		sizeLegendLabel,
-		sizeLegendX,
-		sizeLegendY,
+		// sizeLegendLabel,
+		// sizeLegendX,
+		// sizeLegendY,
 	}
 ) {
 	const { marginLeft, marginRight, marginBottom, marginTop } = margins;
-	console.log(data);
 
 	const xScale = scaleLinear()
 		.domain(extent(data, xValue))
@@ -45,9 +44,7 @@ export function scatterPlot(
 		.domain(extent(data, yValue))
 		.range([height - marginBottom, marginTop]);
 
-	const sizeScale = scaleSqrt().domain(extent(data, sizeValue)).range([6, 12]);
-
-	console.log(sizeScale.ticks(5));
+	const sizeScale = scaleSqrt().domain(extent(data, sizeValue)).range([4, 12]);
 
 	const colorScale = scaleOrdinal()
 		.domain(data.map(colorValue))
@@ -67,12 +64,12 @@ export function scatterPlot(
 		colorLegendY,
 	});
 
-	svg.call(sizeLegend, {
-		sizeScale,
-		sizeLegendLabel,
-		sizeLegendX,
-		sizeLegendY,
-	});
+	// svg.call(sizeLegend, {
+	// 	sizeScale,
+	// 	sizeLegendLabel,
+	// 	sizeLegendX,
+	// 	sizeLegendY,
+	// });
 
 	svg
 		.selectAll("circle.mark")
