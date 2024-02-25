@@ -90,15 +90,7 @@ export const viz = (
 					obj.year = Number(obj.year);
 				});
 
-				const yearData = transformedData.filter(
-					(d) =>
-						d.year === 2018 &&
-						(d.league === "La Liga" ||
-							d.league === "Serie A" ||
-							d.league === "Bundesliga")
-				);
-
-				console.log(yearData);
+				const yearData = transformedData.filter((d) => d.year === 2017);
 
 				//update the state
 				setState((state) => ({ ...state, data: yearData }));
