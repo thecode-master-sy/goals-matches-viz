@@ -64,13 +64,11 @@ export const viz = (
 		//just before we start fetching set the state to be LOADING
 		setState((state) => ({ ...state, data: "LOADING" }));
 
-		fetch("https://goals-matches-viz.vercel.app/data.csv")
-			.then((response) => response.text())
+		fetch("https://goals-matches-viz-api.onrender.com")
+			.then((response) => response.json())
 			.then((csvData) => {
-				const rawData = csvParse(csvData);
-
 				//convert all the keys to a lower case value
-				const transformedData = rawData.map((obj) => {
+				const transformedData = csvData.data.map((obj) => {
 					const newObj = {};
 
 					Object.keys(obj).forEach(
