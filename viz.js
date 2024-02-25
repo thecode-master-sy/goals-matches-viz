@@ -64,7 +64,7 @@ export const viz = (
 		//just before we start fetching set the state to be LOADING
 		setState((state) => ({ ...state, data: "LOADING" }));
 
-		fetch("./data.csv")
+		fetch("https://goals-matches-viz.vercel.app/data.csv")
 			.then((response) => response.text())
 			.then((csvData) => {
 				const rawData = csvParse(csvData);
